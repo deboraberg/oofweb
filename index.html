@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Início | Amigos Conectados</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(to bottom, #fff8f0, #fdfdfd);
+      color: #444;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fef6e4;
+      border-bottom: 2px dashed #fbc4ab;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 50px;
+      max-width: 120px;
+      object-fit: contain;
+      border: 2px solid #f7d9c4;
+      border-radius: 10px;
+    }
+
+    nav a {
+      color: #a86f53;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .carousel-multi {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 90px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      animation: scroll-carousel 30s linear infinite;
+      padding: 20px;
+    }
+
+   .carousel-track img {
+  flex: 0 0 auto;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+
+    @keyframes scroll-carousel {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .section {
+      background-color: #fffdf8;
+      padding: 25px;
+      border-radius: 12px;
+      border: 2px dashed #f9dcc4;
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      color: #a86f53;
+      margin-top: 0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .btn-veja-mais {
+      display: inline-block;
+      background-color: #f4b6a6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .btn-veja-mais:hover {
+      background-color: #e3937a;
+    }
+
+    footer {
+      background-color: #f9eae1;
+      color: #4d4d4d;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 3px double #f3cbbd;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    footer img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+    }
+
+    .spotify-footer {
+      max-width: 300px;
+      margin: 20px auto 10px auto;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-track {
+        animation-duration: 50s;
+      }
+
+      .carousel-track img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="fotos/carrosel2.jpg" alt="Logo Amigos" />
+    </div>
+    <div>
+      <a href="index.html">Início</a>
+      <a href="nossagaleria.html">Galeria</a>
+      <a href="offday.html">Eventos</a>
+    </div>
+  </nav>
+
+  <div class="carousel-multi">
+    <div class="carousel-track">
+      <img src="fotos/carrosel1.jpg" alt="Foto 1">
+      <img src="fotos/carrosel2.jpg" alt="Foto 2">
+      <img src="fotos/carrosel3.png" alt="Foto 3">
+      <img src="fotos/carrosel4.jpg" alt="Foto 4">
+      <img src="fotos/carrosel5.jpeg" alt="Foto 5">
+      <img src="fotos/carroserl6.jpeg" alt="Foto 6">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h3>📸 Galeria de Fotos</h3>
+      <p>Veja os registros mais especiais dos nossos encontros, festas, viagens e aventuras. Clique nas imagens para ampliá-las e reviver cada momento.</p>
+      <a href="nossagaleria.html" class="btn-veja-mais">Veja mais</a>
+    </div>
+
+    <div class="section">
+      <h3>🎉 Eventos Marcantes</h3>
+      <p>Saiba quando e onde nos encontramos! Acompanhe aniversários, festas, encontros e viagens. Cada evento é uma nova história pra contar.</p>
+      <a href="offday.html" class="btn-veja-mais">Veja mais</a>
+    </div>
+  </div>
+
+  <footer>
+  <div style="margin-bottom: 20px;">
+    <a href="https://open.spotify.com/playlist/3oqIqhXL6LrOeTBz3efdfn?si=-ZZzCxfoQBqiSrT6Yvqp2g" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" width="32" height="32" style="fill:#964b00;">
+    </a>
+    <a href="https://www.instagram.com/osvaldoorkutfanclub_?igsh=cnp3dGFiMTByZ2dr" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="32" height="32" style="fill:#964b00;">
+    </a>
+  </div>
+  <p>feito para guardar recordações, com amor Debs!</p>
+</footer>
+
+</body>
+</html>
+
+
+

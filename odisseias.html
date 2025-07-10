@@ -1,0 +1,247 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventos | Amigos Conectados</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #fffaf0;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #f4e1d2;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 1.6em;
+      color: #964b00;
+    }
+
+    nav a {
+      color: #964b00;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 40px;
+      padding: 20px;
+    }
+
+    .evento {
+      background-color: #fff5e6;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    .evento h2 {
+      color: #b35c1e;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .evento p {
+      margin: 10px 0 20px;
+      font-size: 1.1em;
+    }
+
+    .fotos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .fotos img {
+      width: calc(33% - 10px);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .fotos img:hover {
+      transform: scale(1.05);
+    }
+
+    .video {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #f4e1d2;
+      color: #5a3d1e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .spotify-container {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .spotify-container iframe {
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .fotos img {
+        width: 100%;
+      }
+
+      .video {
+        height: 250px;
+      }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 5% auto;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>OOF</h1>
+    <div>
+      <a href="index.html">Início</a>
+      <a href="nossagaleria.html">nossa Galeria</a>
+      <a href="offday.html">oofday</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="evento">
+      <h2>Universo Rita Lee 🎉</h2>
+      <p>Um espetáculo sem igual, emocionante e um marco na vida de todos! Com o Universo Rita Lee, através dessa peça muitos descobriram sua paixão pelo palco...</p>
+      <div class="fotos">
+        <img src="fotos/odisseia1d.jpg" alt="Foto do evento">
+        <img src="fotos/odisseia1d3.jpg" alt="Foto do evento">
+        <img src="fotos/odisseia1d2.jpg" alt="Foto do evento">
+      </div>
+    </div>
+
+    <div class="evento">
+      <h2>Último Carro</h2>
+      <p>Estrelada por Lara, Enzo, Pedro e Miguel. O último carro se passa dentro de um vagão de trem, onde são retratadas as dificuldades do dia a dia!</p>
+      <div class="fotos">
+        <img src="fotos/ultimocaro1.jpg" alt="Foto do evento">
+        <img src="fotos/ultimocarro4.jpg" alt="Foto do evento">
+        <img src="fotos/ultimocarro5.jpg" alt="Foto do evento">
+      </div>
+    </div>
+
+    <div class="evento">
+      <h2>A uma Tela de Distância</h2>
+      <p>Estrelada por Ana, Débora e Nicole, A uma tela de distância retrata a desigualdade social.</p>
+      <div class="fotos">
+        <img src="fotos/ricovspobre.jpg" alt="Foto do evento">
+        <img src="fotos/ricovspobre1.jpeg" alt="Foto do evento">
+        <img src="fotos/ricovspobre5.jpg" alt="Foto do evento">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="close" id="closeBtn">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Foto Ampliada">
+  </div>
+
+  <footer>
+  <div style="margin-bottom: 20px;">
+    <a href="https://open.spotify.com/playlist/3oqIqhXL6LrOeTBz3efdfn?si=-ZZzCxfoQBqiSrT6Yvqp2g" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" width="32" height="32" style="fill:#964b00;">
+    </a>
+    <a href="https://www.instagram.com/osvaldoorkutfanclub_?igsh=cnp3dGFiMTByZ2dr" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="32" height="32" style="fill:#964b00;">
+    </a>
+  </div>
+  <p>feito para guardar recordações, com amor Debs!</p>
+</footer>
+
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.getElementById("closeBtn");
+
+    document.querySelectorAll(".fotos img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventos | Amigos Conectados</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #fffaf0;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #f4e1d2;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 1.6em;
+      color: #964b00;
+    }
+
+    nav a {
+      color: #964b00;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 40px;
+      padding: 20px;
+    }
+
+    .event {
+      background-color: #fff5e6;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .event img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .event img:hover {
+      transform: scale(1.05);
+    }
+
+    .event-info {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .event-info h3 {
+      color: #b35c1e;
+      margin: 0 0 10px;
+    }
+
+    .event-info time {
+      display: block;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .event-info p {
+      margin: 10px 0 15px;
+      font-size: 1.05em;
+    }
+
+    .btn-veja-mais {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #964b00;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .btn-veja-mais:hover {
+      background-color: #6b3200;
+    }
+
+    footer {
+      background-color: #f4e1d2;
+      color: #5a3d1e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .spotify-container {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .spotify-container iframe {
+      border-radius: 12px;
+      width: 100%;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 5% auto;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .event {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .event img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>OOF</h1>
+    <div>
+      <a href="index.html">Início</a>
+      <a href="nossagaleria.html">nossa Galeria</a>
+      <a href="offday.html">oofday</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>OOF DAY 🎉</h2>
+
+    <div class="event">
+      <img src="fotos/odisseia1d3.jpg" alt="Odisseias">
+      <div class="event-info">
+        <h3>Odisseias</h3>
+        <time>2023 e 2024</time>
+        <p>Nossas odisseias</p>
+        <a href="odisseias.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="fotos/oofday6.jpg" alt="Primeiro Encontro OOF">
+      <div class="event-info">
+        <h3>Primeiro Encontro OOF</h3>
+        <time>17 de Julho de 2024</time>
+        <p>Comidas, karaokê, Nina e Theo, risadas, amor e muito carinho.</p>
+        <a href="primeiroencontro.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="fotos/fantasia5.jpeg" alt="Festa Fantasia">
+      <div class="event-info">
+        <h3>Festa Fantasia</h3>
+        <time>16 de Novembro de 2024</time>
+        <p>Comidas deliciosas, fantasias criativas, cantorias, fofocas e memórias inesquecíveis.</p>
+        <a href="festafantasia.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="fotos/ambogui1.jpeg" alt="Tarde do Hambúrguer">
+      <div class="event-info">
+        <h3>Tarde do Hambúrguer</h3>
+        <time>17 de Maio de 2025</time>
+        <p>Chico de roupinha, Pedro na chapa, Enzo nas batatas, brigadeiro da Lara e “Premonição” na televisão.</p>
+        <a href="ambogui.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="fotos/interclasse.jpg" alt="Interclasses">
+      <div class="event-info">
+        <h3>Interclasses</h3>
+        <time>2023 e 2024</time>
+        <p>Jogos, gritaria, confusão, união e sol quente.</p>
+        <a href="interclasse.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="fotos/trote1.jpg" alt="Terceirão">
+      <div class="event-info">
+        <h3>TERCEIRÃO!!!!!!</h3>
+        <time>2025</time>
+        <p>Momentos e festas do nosso último ano no ensino médio!</p>
+        <a href="terceirao.html" class="btn-veja-mais">Veja mais</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="close" id="closeBtn">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Foto Ampliada">
+  </div>
+
+  <footer>
+  <div style="margin-bottom: 20px;">
+    <a href="https://open.spotify.com/playlist/3oqIqhXL6LrOeTBz3efdfn?si=-ZZzCxfoQBqiSrT6Yvqp2g" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" width="32" height="32" style="fill:#964b00;">
+    </a>
+    <a href="https://www.instagram.com/osvaldoorkutfanclub_?igsh=cnp3dGFiMTByZ2dr" target="_blank" style="margin: 0 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="32" height="32" style="fill:#964b00;">
+    </a>
+  </div>
+  <p>feito para guardar recordações, com amor Debs!</p>
+</footer>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.getElementById("closeBtn");
+
+    document.querySelectorAll(".event img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
